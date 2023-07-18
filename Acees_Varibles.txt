@@ -1,0 +1,37 @@
+1] how many types of access modifiers is available in Java?
+
+ Ans: there are 4 access modifiers present  in java
+        1. Default
+	2. public
+	3. private
+	4. Protected
+	
+2]What happens if you don't specify access modifier?
+ Ans:f you don't specify an access modifier for a class member in Java, it       defaults to the "default" access modifier.
+
+
+3] Can we make a class private in Java?
+Ans: No, we cannot make a top-level class private in Java.Does not have any use when we declare class as a private
+   
+4] Can we declare a class as protected?
+ Ans:No, we cannot declare a  class as protected in Java. Nested classes, which are defined inside another class, can have the protected access modifier
+
+5] Why you should make your field private in Java?
+Ans:You should make your field private in Java to enforce encapsulation and control access to the field from outside the class.
+
+6] Why getter method is better than public variables in Java?
+Ans:Getter methods are better than public variables in Java because they provide encapsulation, allowing for better control over data access, validation, and flexibility for future changes in the internal representation of the data.
+
+7] What is difference between public and protected modifier in Java?
+Ans: public members are accessible from any class, while protected members are accessible within the same package and by subclasses.
+
+8] Can we have a private constructor in Java? What is the role of private constructor in Java?
+Ans:Yes, we can have a private constructor in Java.
+
+The role of a private constructor in Java is to prevent the instantiation of a class from outside itself, effectively making it inaccessible for direct object creation. This technique is often used in singleton design patterns or utility classes that contain only static methods and do not need to be instantiated.
+
+9] Can we declare a top-level class as protected?
+Ans:No, we cannot declare a top-level class as protected in Java. The protected access modifier is only applicable to class members (fields and methods) within a class.
+
+10] Why are access modifiers used?
+Ans:Access modifiers are used to control the visibility and accessibility of classes, methods, and variables in order to enforce encapsulation and maintain proper access control in Java.
