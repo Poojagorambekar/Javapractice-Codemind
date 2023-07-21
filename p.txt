@@ -1,0 +1,69 @@
+1] List down some of java method’s where method overloading is used
+
+Ans: 1.Constructors
+     2.Math operations
+     3.Print methods
+     4.Conversion methods
+     5.Array manipulation
+
+2] Overload method by changing data type of argument and keeping same number of 
+argument.
+Ans:
+
+ package Oops_concept;
+
+public class Demo {
+
+	
+		public int Multiplication(int a, int b) 
+		{
+			return a*b;
+		}
+		public float  Multiplication(int a, float b)
+		{
+			return  a*b;
+		}
+                public float Multiplication(float a, float b)
+		{
+			return a*b;
+		}
+   public static void main(String[] args) {
+	   Demo d=new Demo();
+	  System.out.println(d.Multiplication(1.2f,1.3f));    
+	  System.out.println(d.Multiplication(2,3)); 
+	  System.out.println(d.Multiplication(3, 3.5f));
+}
+	} 
+
+3] Calculate area of Circle, Triangle, Rectangle using method overloading
+Ans:
+public class Demo1 {
+	
+	public double CalculateArea(double radius)
+   
+	{
+		return 3.14*radius*radius;
+	}
+	public double CalculateArea(int length,int breadth)
+	{
+		return 0.5*length*breadth;
+	}
+	public double CalculateArea(double width,double heigth)
+	{
+		return width*heigth;
+	}
+	public static void main(String[] args) {
+		Demo1 obj=new Demo1();
+		System.out.println("Area of circle is:"+obj.CalculateArea(5f));
+		System.out.println("Area of Traingle is:"+obj.CalculateArea(5,7));
+		System.out.println("Area of Rectangle is:"+obj.CalculateArea(10,20));
+		
+	}
+	
+}
+
+4] What is the advantage of method overloading.
+Ans:
+1.Readability: Overloaded methods allow you to use the same method name for similar operations, making the code more readable and easier to understand.
+2.Compile-time Polymorphism: Method overloading is a form of compile-time polymorphism, where the appropriate method is resolved and called during the compilation phase based on the method signature.
+3.Code Reusability: Instead of creating multiple methods with different names for slightly different functionalities, you can reuse the method name and add different parameter lists, promoting code reusability.
