@@ -1,0 +1,145 @@
+1]why the below code is showing complile time error.
+ interface X
+{
+void methodX();
+}
+class Y implements X
+{
+void methodX()
+{
+System.out.println("Method X");
+}
+} 
+
+Ans: If you have an interface in Java that declares a method, that method is by default accessible to other classes public. When you implement that interface in a class, the method in the class must also have at least the same level of accessibility (public).
+ in above example  in interface the method is methodX() which is by default public abstract method but in class Y this method have not access specifier and hence method in class have accessspecifier is default.That's why code showing compile time error.
+ below code is correct-
+
+
+interface X {
+    void methodX();
+}
+
+public class Y implements X {
+    public void methodX() {
+        System.out.println("Method X");
+    }
+}
+
+
+2] Does below code compile sucessfully?If not,why?
+interface A
+{
+int i=111;
+}
+class B implements A
+{
+void methodB()
+{
+i=222;
+}
+}
+Ans:No, the code will not compile successfully due to an error in the class B. The issue is that you are trying to modify the value of the variable i in class B, which is declared in the interface A. However, interface variables are implicitly considered as final  and you cannot change their values once they are assigned.
+  In Java, variables declared within an interface are implicitly considered as public, static, and final.
+
+
+3]Is the following code written correctly?
+  class A
+  {
+
+  }
+  interface B extends A
+  {
+
+  }
+
+Ans:
+ This code is not correct because an interface cannot directly extend a class in Java.
+ In Java A class can implement  number of interfaces, but an interface cannot extend a class
+In Java, a class can extend only one other class, and an interface can extend multiple other interfaces. However, an interface cannot extend a class. Interfaces are meant to define a contract for classes to implement, and they do not contain any implementation of their own. 
+
+
+
+4]What will be the output of the following program?
+
+
+interface P
+{
+String P="PPPP";
+String method();
+}
+interface Q extends P
+{
+String q="QQQQ";
+String methodQ();
+}
+class R implements P,Q
+{
+public String methodP()
+
+{
+return q+p;
+}
+public String methodQ()
+{
+return p+q;
+}
+}
+public class MainClass
+{
+public static void main(String[ ]args)
+{
+R r=new R();
+System.out .println(r.methodP());
+System.out.println(r.methodQ());
+}
+}
+
+Ans: QQQQPPPP
+     PPPPQQQQ
+
+5] Is the below program written correctly?If yes,what will be the output?
+
+class A implements B
+{
+public int methodB(int i)
+{
+return i=+i * i;
+}
+}
+interface B
+{
+int methodB(int i);
+}
+public class MainClass
+{
+public stativ void main(String[ ]args)
+{
+B b=new A();
+System.out.println(b.methodB(2));
+}
+}
+output:4
+
+6] What is interface in java?
+Ans:An interface in Java is a blueprint of a class. It has static constants and abstract methods.
+The interface in Java is a mechanism to achieve abstraction. There can be only abstract methods in the Java 
+interface, not method body. It is used to achieve abstraction and multiple inheritance in Java.
+In other words, you can say that interfaces can have abstract methods and variables. It cannot have a method 
+body.
+Java Interface also represents the IS-A relationship.
+It cannot be instantiated just like the abstract class.
+Since Java 8, we can have default and static methods in an interface
+
+7]Which modifiers are allowed for methods in an interface?
+
+Ans: public and abstract modifiers are allowed for methods in an interface.Since Java 8, we can have default and static methods in an interface.
+Since Java 9, we can have private methods in an interface.
+ 
+8]Suppose A is an interface.can we create an object using new A()?
+
+No,  cannot create an object of an interface using the new keyword in Java. Interfaces are abstract and do not have any concrete implementations, which means you cannot create instances of an interface directly.
+ Indirectly, you can create an object of an interface using a concept called anonymous inner classes.
+
+9] Can an interface extends another interface in java?
+  Yes, in Java, an interface can extend another interface using extend keyword.
